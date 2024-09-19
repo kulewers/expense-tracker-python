@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "expenses"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click="^8.1.7"
+sqlalchemy = "^2.0.35"
+pandas = "^2.2.2"
+matplotlib = "^3.9.2"
+pyqt6 = "^6.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+expenses = "expenses:cli"
