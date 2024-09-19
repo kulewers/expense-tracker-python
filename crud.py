@@ -129,7 +129,7 @@ def paginate_query(query, offset: int = 0, page: int = 1, page_size: int = 5) ->
 
   answer = options[choice-1]
 
-  if answer is models.Expense:
+  if type(answer) is models.Expense:
     return answer
   
   if answer == 'load more':
