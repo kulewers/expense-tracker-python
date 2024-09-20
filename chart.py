@@ -9,7 +9,7 @@ import calendar
 
 
 parser = argparse.ArgumentParser(description="Crate a chart of your week's expenses")
-parser.add_argument("-o", "--output", required=False, type=str)
+parser.add_argument('-o', '--output', required=False, type=str)
 args = parser.parse_args()
 
 
@@ -25,13 +25,13 @@ def main():
   df = df.reindex(week, fill_value=0)
 
   # Create and style chart
-  ax = df.plot(kind='bar', stacked=True, title="Your expenses this week", xlabel='Day', ylabel='Expenses')
+  ax = df.plot(kind='bar', stacked=True, title='Your expenses this week', xlabel='Day', ylabel='Expenses')
   weekdays = list(calendar.day_name) 
   ax.set_xticklabels(weekdays)
   plt.xticks(rotation=20)
 
   if args.output:
-    plt.savefig(f"{args.output}.png")
+    plt.savefig(f'{args.output}.png')
   else:
     plt.show()
 
