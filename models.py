@@ -4,19 +4,20 @@ from database import engine
 
 
 class Base(DeclarativeBase):
-  pass
+    pass
 
 
 class Expense(Base):
-  __tablename__ = 'expense'
+    __tablename__ = "expense"
 
-  id: Mapped[int] = mapped_column(primary_key=True)
-  amount: Mapped[float]
-  category: Mapped[str]
-  date: Mapped[date]
-  description: Mapped[str] = mapped_column(nullable=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    amount: Mapped[float]
+    category: Mapped[str]
+    date: Mapped[date]
+    description: Mapped[str] = mapped_column(nullable=True)
 
-  def __repr__(self) -> str:
-    return f"<Expense(id={self.id}, amount={self.amount}, category={self.category}, date={self.date}, description={self.description})"
+    def __repr__(self) -> str:
+        return f"<Expense(id={self.id}, amount={self.amount}, category={self.category}, date={self.date}, description={self.description})"
+
 
 Base.metadata.create_all(engine)
